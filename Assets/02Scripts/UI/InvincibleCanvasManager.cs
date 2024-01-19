@@ -1,0 +1,192 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+using UnityEngine.SceneManagement;
+
+public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
+{
+    #region _Popups_
+    [Space(10f), SerializeField]
+    private Fade fade;
+    public Fade Fade_Popup => fade; // 이렇게 쓰면 읽기 전용으로 취급됨.
+
+    [SerializeField]
+    private PlayerUI playerUI;
+    public PlayerUI Player_UI => playerUI;
+
+    [SerializeField]
+    private PopupBase popupBackGround;
+    public PopupBase Background_Popup => popupBackGround;
+    #endregion
+    private new void Awake()
+    {
+        base.Awake();
+
+        #region _Fade Component_
+        fade = transform.Find("Fade").GetComponent<Fade>();
+        fade.InitInfo();
+
+        fade.CanvasShow();
+        #endregion
+
+        #region _PlayerUI Component_
+        playerUI = transform.Find("Player UI").GetComponent<PlayerUI>();
+        playerUI.InitInfo();
+
+        playerUI.CanvasHide();
+        #endregion
+    }
+
+
+    public void NextSceneLoaded()
+    {
+        delayedPopupStack.Clear();
+
+        fade.CanvasShow();
+        fade.CanvasFadeOut();
+    }
+    public void PlayerUI_On()
+    {
+        playerUI.CanvasShow();
+
+        playerUI.StressRenewal_Instant();
+    }
+
+    private Stack<PopupBase> delayedPopupStack = new Stack<PopupBase>();
+    public Stack<PopupBase> DelayedPopupStack => delayedPopupStack;
+
+    private PopupBase curPopup;
+    public PopupBase CurPopup => curPopup;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) // 일시정지 키를 누를 경우
+        {
+            if (curPopup != null) // 열린 팝업창이 있었을 경우
+            {
+                PopupClose();
+            }/*
+            else // 열린 팝업창이 없었을 경우
+            {
+                if (SceneManager.GetActiveScene().buildIndex > 2) // 현재 씬이 Intro(0), Loading(1), Title(2) 씬이 아닐 경우
+                {
+                    if (fade.MyCanvasGroup.blocksRaycasts) // 페이드 이미지가 있을 경우
+                    {
+                        Debug.Log("페이드가 끝나지 않아 일시정지를 할 수 없습니다.");
+                    }
+                    else
+                    {
+                        GameManager.Inst.GamePause_ON();
+                    }
+                }
+                else
+                {
+                    Debug.Log("Pause Popup을 열 수 없는 씬입니다.");
+                }
+            }*/
+        }
+    }
+
+    #region _Popup Controll_
+    public void PopupOpen(PopupBase newPopup)
+    {
+        Debug.Log("Popup Open : " + newPopup.gameObject.name);
+
+        if (curPopup != null) // 현재 열려있던 팝업이 있었을 경우
+        {
+            curPopup.CanvasFadeOut();
+            curBtn = null;
+
+            delayedPopupStack.Push(curPopup); // 기존에 열려있던 팝업창은 비활성화 상태로 스택에 쌓아둠
+        }
+        else // 열려있던 팝업이 없었을 경우
+        {
+            popupBackGround.CanvasFadeIn(); // UI 백그라운드 열기
+        }
+
+        newPopup.CanvasFadeIn();
+        SelectBtnChange(newPopup.FirstBtnNode);
+
+        curPopup = newPopup;
+    }
+
+    public void PopupClose()
+    {
+        Debug.Log("Popup Close");
+
+        curPopup.CanvasFadeOut();
+        curBtn = null;
+
+        if (delayedPopupStack.TryPop(out curPopup)) // 임시로 닫아뒀던 팝업이 있었을 경우
+        { //                                                 └ 가장 마지막에 있던 팝업을 현재 팝업으로 지정
+            curPopup.CanvasFadeIn();
+            SelectBtnChange(curPopup.FirstBtnNode);
+        }
+        else // 없었을 경우
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 2) // 타이틀 씬에 있을 경우
+            {
+                GameObject.FindWithTag("Player").GetComponent<PopupBase>().CanvasFadeIn(); // 타이틀 씬에선 타이틀 버튼 팝업에만 Player 태그가 있으므로 타이틀 버튼의 FadeIn()을 실행함.
+            }
+
+            curPopup = null; // 현재 팝업을 null로 설정
+
+            popupBackGround.CanvasFadeOut(); // UI 백그라운드 닫기
+        }
+    }
+    #endregion
+
+
+    public void AllPopupClose()
+    {
+        if (curPopup != null)
+        {
+            curPopup.CanvasFadeOut();
+            curPopup = null;
+
+            popupBackGround.CanvasFadeOut(); // UI 백그라운드 닫기
+        }
+
+        curBtn = null;
+    }
+
+    public void GoToMain()
+    {
+        AllPopupClose();
+
+        GameManager.Inst.SelectScene(SCENE.Title);
+    }
+
+    public void GameQuit()
+    {
+        fade.StartFade(FadeMode.GameQuit);
+    }
+
+    /*
+    public void KeySettingReset(Transform content_settingButtons)
+    {
+        GameManager.Inst.ResetInputData();
+
+        for (int i = 0; i < content_settingButtons.childCount; i++)
+        {
+            content_settingButtons.GetChild(i).GetComponent<KeySettingButton>().WriteCurrentKeycode();
+        }
+    }
+    */
+
+    [SerializeField]
+    private ButtonNode curBtn;
+    public ButtonNode CurBtn => curBtn;
+
+    public void SelectBtnChange(ButtonNode newNode)
+    {
+        if (curBtn != null)
+        {
+            curBtn.DisSelected();
+        }
+
+        curBtn = newNode;
+
+        curBtn.Selected();
+    }
+}
