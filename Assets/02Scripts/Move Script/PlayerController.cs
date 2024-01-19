@@ -50,19 +50,25 @@ public class PlayerController : MonoBehaviour
         moveDir.y = Input.GetAxisRaw("Vertical");
         moveDir = moveDir.normalized;
 
-        if (moveDir != Vector2.zero) // 이동을 안 했을 경우
+        if (moveDir != Vector2.zero) // 이동을 했을 경우
         {
             //Debug.Log(moveDir + " : " + (Mathf.Atan(moveDir.y / moveDir.x) * Mathf.Rad2Deg - 90));
 
             targetAngle = -(Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg - 90);
-
-            if (Mathf.Abs(transform.eulerAngles.y - targetAngle) > 180f)
+            /*
+            if (Mathf.Abs(Mathf.Abs(transform.eulerAngles.y) - Mathf.Abs(targetAngle)) > 180f)
             {
+                Debug.Log(Mathf.Abs(Mathf.Abs(transform.eulerAngles.y) - Mathf.Abs(targetAngle)) + " : " + targetAngle + " → " + (targetAngle - 360f * Mathf.Sign(targetAngle)));
                 targetAngle -= 360f * Mathf.Sign(targetAngle);
             }
+            */
 
             lookingDir.y = targetAngle;
-            transform.eulerAngles = Vector3.SmoothDamp(transform.eulerAngles, lookingDir, ref velo, deltaTime);
+            //transform.eulerAngles = Vector3.SmoothDamp(transform.eulerAngles, lookingDir, ref velo, deltaTime);
+            transform.eulerAngles = Vector2.Lerp(transform.eulerAngles, lookingDir, Time.deltaTime);
+            //transform.eulerAngles = Vector2.MoveTowards(transform.eulerAngles, lookingDir, deltaTime);
+
+
             /*
             if (Mathf.Abs(lookingDir.y) > 180f)
             {
