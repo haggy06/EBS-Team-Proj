@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour
 
             lookingDir.y = targetAngle;
             //transform.eulerAngles = Vector3.SmoothDamp(transform.eulerAngles, lookingDir, ref velo, deltaTime);
-            transform.eulerAngles = Vector2.Lerp(transform.eulerAngles, lookingDir, Time.deltaTime);
             //transform.eulerAngles = Vector2.MoveTowards(transform.eulerAngles, lookingDir, deltaTime);
 
 
