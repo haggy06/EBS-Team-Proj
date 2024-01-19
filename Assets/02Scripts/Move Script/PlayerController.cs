@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private float staminaUsagePerSec = 0.1f;
     [SerializeField]
     private float staminaRecoveryPerSec = 0.1f;
+    [SerializeField]
+    private float exhaustionTerm = 2f;
 
     private Rigidbody rigid;
     private Animator anim;
@@ -53,6 +55,8 @@ public class PlayerController : MonoBehaviour
 
             if (moveDir != Vector3.zero) // 이동을 했을 경우
             {
+                anim.SetBool(PlayerHash.Walking, true);
+
                 Debug.Log(MoveSpeed);
                 /*
                 velo.x = Mathf.Clamp(rigid.velocity.x + MoveSpeed * moveDir.x * Time.deltaTime, -MoveSpeed, MoveSpeed);
@@ -61,6 +65,7 @@ public class PlayerController : MonoBehaviour
                 */
 
                 controller.Move(MoveSpeed * moveDir * Time.deltaTime);
+                controller.Move(MoveSpeed * Vector3.down * Time.deltaTime);
 
                 lookingDir.y = -(Mathf.Atan2(moveDir.z, moveDir.x) * Mathf.Rad2Deg - 90);
                 transform.eulerAngles = lookingDir;
@@ -134,22 +139,34 @@ public class PlayerController : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
+                    //anim.SetBool(PlayerHash.Walking, false);
+
                     if (!isRunning) // 뛰고 있지 않을 경우
                     {
-                        StopCoroutine("StaminaRefreshLogic");
                         isRunning = true;
+
+                        anim.SetBool(PlayerHash.Running, true);
+
+                        StopCoroutine("StaminaRefreshLogic");
                     }
+
                     if (staminaGauge - (staminaUsagePerSec * Time.deltaTime) >= 0f) // 스태미너가 충분할 때
                     {
+                        //anim.SetBool(PlayerHash.Walking, false);
+
                         staminaGauge = Mathf.Clamp(staminaGauge - (staminaUsagePerSec * Time.deltaTime), 0f, 1f);
                     }
                     else // 스태미너가 모자랄 때
                     {
-                        // todo : 탈진 구현
-
+                        canControll = false;
                         isRunning = false;
 
+                        anim.SetBool(PlayerHash.Walking, false);
+                        anim.SetBool(PlayerHash.Running, false);
+                        anim.SetBool(PlayerHash.Exhausted, true);
+
                         Invoke("StaminaRefresh", 1f);
+                        Invoke("ExhaustionRecovery", exhaustionTerm);
                     }
                 }
                 else if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -157,6 +174,8 @@ public class PlayerController : MonoBehaviour
                     if (isRunning) // 뛰고 있을 경우
                     {
                         isRunning = false;
+                        anim.SetBool(PlayerHash.Running, false);
+                        //anim.SetBool(PlayerHash.Walking, true);
 
                         Invoke("StaminaRefresh", 1f);
                     }
@@ -164,9 +183,12 @@ public class PlayerController : MonoBehaviour
             }
             else // 움직이지 않았을 경우
             {
+                Invoke("WalkStop", 0.075f);
+
                 if (isRunning) // 뛰고 있을 경우
                 {
                     isRunning = false;
+                    Invoke("RunStop", 0.075f);
 
                     Invoke("StaminaRefresh", 1f);
                 }
@@ -187,6 +209,30 @@ public class PlayerController : MonoBehaviour
             }
             */
         }
+    }
+    private void WalkStop()
+    {
+        if (moveDir == Vector3.zero)
+        {
+            anim.SetBool(PlayerHash.Walking, false);
+        }
+    }
+    private void RunStop()
+    {
+        if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            anim.SetBool(PlayerHash.Running, false);
+        }
+    }
+
+    private void ExhaustionRecovery()
+    {
+        anim.SetBool(PlayerHash.Exhausted, false);
+
+        canControll = true;
+
+        anim.SetBool(PlayerHash.Walking, (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0));
+        anim.SetBool(PlayerHash.Running, Input.GetKey(KeyCode.LeftShift));
     }
 
     private void StaminaRefresh()
