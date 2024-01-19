@@ -22,8 +22,8 @@ public class GameManager : MonoSingleton<GameManager>
     public PlayData Play_Data => playData;
     #endregion
 
-    [SerializeField, Range(0f, 1f)]
-    private float curStress; // 백분율
+    [SerializeField, Range(-1f, 1f)]
+    private float curStress = 0f; // 백분율
     public float CurStress => curStress;
 
     private new void Awake()
@@ -79,7 +79,14 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void StressUP(float stressAmount)
     {
-        curStress = Mathf.Clamp(curStress + stressAmount, 0f, 1f);
+        curStress = Mathf.Clamp(curStress + stressAmount, -1f, 1f);
+        InvincibleCanvasManager.Inst.Player_UI.StressRenewal_Lerp();
+
+        PlayerPrefs.SetFloat("StressGauge", curStress);
+    }
+    public void StressDOWN(float stressAmount)
+    {
+        curStress = Mathf.Clamp(curStress - stressAmount, -1f, 1f);
         InvincibleCanvasManager.Inst.Player_UI.StressRenewal_Lerp();
 
         PlayerPrefs.SetFloat("StressGauge", curStress);
