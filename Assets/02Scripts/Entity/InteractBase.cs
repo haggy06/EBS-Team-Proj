@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class InteractBase : MonoBehaviour
 {
     /*
@@ -23,6 +25,10 @@ public class InteractBase : MonoBehaviour
         }
     }
     */
+    [SerializeField]
+    private string message = "Space 키를 눌러 상호작용";
+    private 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
