@@ -20,12 +20,12 @@ public class PlayerUI : PopupBase
     [ContextMenu("Stress Renewal - Lerp")]
     public void StressRenewal_Lerp()
     {
-        LeanTween.value(stressNeedle.gameObject, stressNeedle.localEulerAngles.z, GameManager.Inst.CurStress * 90f + 90f, 1.5f).setEase(LeanTweenType.easeOutCirc).setOnUpdate((float value) => { NeedleMove(value); });
+        LeanTween.value(stressNeedle.gameObject, stressNeedle.localEulerAngles.z, (GameManager.Inst.CurStress + 1) * 90f, 1.5f).setEase(LeanTweenType.easeOutCirc).setOnUpdate((float value) => { NeedleMove(value); });
     }
     [ContextMenu("Stress Renewal - Instant")]
     public void StressRenewal_Instant()
     {
-        NeedleMove(GameManager.Inst.CurStress * 90f + 90f);
+        NeedleMove((GameManager.Inst.CurStress + 1) * 90f);
     }
     private void NeedleMove(float value)
     {

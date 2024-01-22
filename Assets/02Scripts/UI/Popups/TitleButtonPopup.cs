@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class TitleButtonPopup : PopupBase
 {
+    [SerializeField]
+    private SCENE moveScene;
     private void Awake()
     {
         InitInfo();
@@ -13,6 +15,6 @@ public class TitleButtonPopup : PopupBase
         Button btn;
 
         btn = transform.GetChild(0).GetComponent<Button>();
-        btn.onClick.AddListener(() => GameManager.Inst.SelectScene(SCENE.SampleScene0));
+        btn.onClick.AddListener(() => GameManager.Inst.SelectScene(moveScene));
     }
 }
