@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class PlayerUI : PopupBase
 {
     [Space(5), SerializeField]
     private RectTransform stressNeedle;
+
+    [SerializeField]
+    private Image staminaGauge;
 
     private Vector3 rotateVec = Vector3.zero;
     public new void InitInfo()
@@ -32,5 +37,10 @@ public class PlayerUI : PopupBase
         rotateVec.z = value;
 
         stressNeedle.localEulerAngles = rotateVec;
+    }
+
+    public void StaminaRenewal(float newPercent)
+    {
+        staminaGauge.fillAmount = newPercent;
     }
 }

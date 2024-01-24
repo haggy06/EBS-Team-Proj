@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         anim = transform.GetChild(0).GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
+
+        InvincibleCanvasManager.Inst.Player_UI.StaminaRenewal(staminaGauge);
     }
 
     /*
@@ -43,8 +45,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDir = Vector2.zero;
     [SerializeField]
     private Vector2 lookingDir = Vector2.zero;
-    [SerializeField]
-    private Vector3 velo = Vector3.zero;
     private void Update()
     { 
         if (canControll)
@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
                         //anim.SetBool(PlayerHash.Walking, false);
 
                         staminaGauge = Mathf.Clamp(staminaGauge - (staminaUsagePerSec * Time.deltaTime), 0f, 1f);
+                        InvincibleCanvasManager.Inst.Player_UI.StaminaRenewal(staminaGauge);
                     }
                     else // 스태미너가 모자랄 때
                     {
@@ -194,6 +195,15 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                if (InvincibleCanvasManager.Inst.CurActTarget != null)
+                {
+                    InvincibleCanvasManager.Inst.CurActTarget.Interact();
+
+                    canControll = false;
+                }
+            }
             /*
             moveDir.x = Input.GetAxis("Horizontal");
             moveDir.y = rigid.velocity.y / (isRunning ? runSpeed : walkSpeed);
@@ -247,6 +257,7 @@ public class PlayerController : MonoBehaviour
         while (true)
         {
             staminaGauge = Mathf.Clamp(staminaGauge + (staminaRecoveryPerSec * Time.deltaTime), 0f, 1f);
+            InvincibleCanvasManager.Inst.Player_UI.StaminaRenewal(staminaGauge);
 
             if (staminaGauge >= 1f)
             {

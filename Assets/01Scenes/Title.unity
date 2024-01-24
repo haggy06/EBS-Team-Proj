@@ -278,6 +278,7 @@ MonoBehaviour:
   fadeDuration: 0.25
   myCanvasGroup: {fileID: 0}
   firstBtnNode: {fileID: 0}
+  moveScene: 5
 --- !u!225 &464390386
 CanvasGroup:
   m_ObjectHideFlags: 0

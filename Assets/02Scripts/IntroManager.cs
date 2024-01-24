@@ -6,6 +6,7 @@ public class IntroManager : MonoBehaviour
 {
     private void Awake()
     {
+        InvincibleCanvasManager.Inst.Fade_Popup.CanvasShow();
         InvincibleCanvasManager.Inst.Fade_Popup.CanvasFadeOut();
 
         Invoke("MoveToTitle", 2);

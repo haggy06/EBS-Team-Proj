@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
 {
@@ -18,6 +19,10 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
     [SerializeField]
     private PopupBase popupBackGround;
     public PopupBase Background_Popup => popupBackGround;
+
+    [SerializeField]
+    private PopupBase interactAlert;
+    public PopupBase InteractAlert => interactAlert;
     #endregion
     private new void Awake()
     {
@@ -27,7 +32,7 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
         fade = transform.Find("Fade").GetComponent<Fade>();
         fade.InitInfo();
 
-        fade.CanvasShow();
+        fade.CanvasHide();
         #endregion
 
         #region _PlayerUI Component_
@@ -36,8 +41,34 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
 
         playerUI.CanvasHide();
         #endregion
+
+        #region _InteractAlert Component_
+        interactAlert = transform.Find("Interact Alert").GetComponent<PopupBase>();
+        interactAlert.InitInfo();
+
+        interactAlert.CanvasHide();
+        #endregion
     }
 
+    private InteractBase curActTarget;
+    public InteractBase CurActTarget => curActTarget;
+    public void Interact_ON(string message, InteractBase curTarget)
+    {
+        curActTarget = curTarget;
+
+        interactAlert.GetComponent<TextMeshProUGUI>().text = message;
+
+        interactAlert.CanvasFadeIn();
+    }
+    public void Interact_OFF(InteractBase outTarget)
+    {
+        if (curActTarget == outTarget)
+        {
+            curActTarget = null;
+        }
+
+        interactAlert.CanvasFadeOut();
+    }
 
     public void NextSceneLoaded()
     {

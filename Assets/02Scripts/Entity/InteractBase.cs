@@ -26,19 +26,42 @@ public class InteractBase : MonoBehaviour
     }
     */
     [SerializeField]
-    private string message = "Space 키를 눌러 상호작용";
-    private 
+    private string message = "Press C To Interact";
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("LookingPos"))
         {
-            InteractEvent();
+            InteractEvent_ON();
         }
     }
 
-    protected virtual void InteractEvent()
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("LookingPos"))
+        {
+            InteractEvent_OFF();
+        }
+    }
+
+    protected virtual void InteractEvent_ON()
     {
         Debug.Log(gameObject.name + "이(가) 플레이어를 감지함.");
+
+        InvincibleCanvasManager.Inst.Interact_ON(message, this);
+    }
+
+    protected virtual void InteractEvent_OFF()
+    {
+        Debug.Log(gameObject.name + "이(가) 플레이어 감지를 종료함.");
+
+        InvincibleCanvasManager.Inst.Interact_OFF(this);
+    }
+
+    public virtual void Interact()
+    {
+        Debug.Log(gameObject.name + " 상호작용 시작");
+
+        InvincibleCanvasManager.Inst.Interact_OFF(this);
     }
 }

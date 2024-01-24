@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class SceneMoveInteract : InteractBase
 {
-    [SerializeField]
-    private string message = "SCENE으로 이동함.";
+    [Space(5), SerializeField]
+    private SCENE targetScene;
 
+    public override void Interact()
+    {
+        base.Interact();
 
+        GameManager.Inst.SelectScene(targetScene);
+    }
 }
