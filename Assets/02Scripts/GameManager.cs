@@ -3,6 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.SceneManagement;
+
+public enum Emotion
+{
+    Normal,
+    Smile,
+    Happy,
+    Panic,
+    Sad,
+    Scary,
+    Suprise,
+    Stress,
+
+}
 public class GameManager : MonoSingleton<GameManager>
 {
     private SCENE saveScene;
@@ -21,6 +34,13 @@ public class GameManager : MonoSingleton<GameManager>
     private PlayData playData;
     public PlayData Play_Data => playData;
     #endregion
+    private Emotion curEmotion;
+    public Emotion CurEmotion
+    {
+        set => curEmotion = value;
+
+        get => curEmotion;
+    }
 
     [SerializeField, Range(-1f, 1f)]
     private float curStress = 0f; // ¹éºÐÀ²

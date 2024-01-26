@@ -6,5 +6,6 @@ public enum SCENE
     SampleScene0,
     SampleScene1,
     MoveTest,
+    Home,
 
 }

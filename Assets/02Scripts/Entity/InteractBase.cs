@@ -44,14 +44,14 @@ public class InteractBase : MonoBehaviour
         }
     }
 
-    protected virtual void InteractEvent_ON()
+    private void InteractEvent_ON()
     {
         Debug.Log(gameObject.name + "이(가) 플레이어를 감지함.");
 
         InvincibleCanvasManager.Inst.Interact_ON(message, this);
     }
 
-    protected virtual void InteractEvent_OFF()
+    private void InteractEvent_OFF()
     {
         Debug.Log(gameObject.name + "이(가) 플레이어 감지를 종료함.");
 

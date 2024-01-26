@@ -17,12 +17,20 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
     public PlayerUI Player_UI => playerUI;
 
     [SerializeField]
+    private TalkUI talkUI;
+    public TalkUI Talk_UI => talkUI;
+
+    [SerializeField]
     private PopupBase popupBackGround;
     public PopupBase Background_Popup => popupBackGround;
 
     [SerializeField]
     private PopupBase interactAlert;
     public PopupBase InteractAlert => interactAlert;
+
+    [SerializeField]
+    private PopupBase diaryPopup;
+    public PopupBase DiaryPopup => diaryPopup;
     #endregion
     private new void Awake()
     {
@@ -42,11 +50,25 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
         playerUI.CanvasHide();
         #endregion
 
+        #region _DiaryPopup Component_
+        diaryPopup = transform.Find("Diary Popup").GetComponent<PopupBase>();
+        diaryPopup.InitInfo();
+
+        diaryPopup.CanvasHide();
+        #endregion
+
         #region _InteractAlert Component_
         interactAlert = transform.Find("Interact Alert").GetComponent<PopupBase>();
         interactAlert.InitInfo();
 
         interactAlert.CanvasHide();
+        #endregion
+
+        #region _TalkUI Component_
+        talkUI = transform.Find("Talk UI").GetComponent<TalkUI>();
+        talkUI.InitInfo();
+
+        talkUI.CanvasHide();
         #endregion
     }
 
@@ -132,7 +154,7 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
         }
         else // 열려있던 팝업이 없었을 경우
         {
-            popupBackGround.CanvasFadeIn(); // UI 백그라운드 열기
+            // popupBackGround.CanvasFadeIn(); // UI 백그라운드 열기
         }
 
         newPopup.CanvasFadeIn();
@@ -162,7 +184,7 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
 
             curPopup = null; // 현재 팝업을 null로 설정
 
-            popupBackGround.CanvasFadeOut(); // UI 백그라운드 닫기
+            // popupBackGround.CanvasFadeOut(); // UI 백그라운드 닫기
         }
     }
     #endregion
@@ -218,6 +240,9 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
 
         curBtn = newNode;
 
-        curBtn.Selected();
+        if (curBtn != null)
+        {
+            curBtn.Selected();
+        }
     }
 }

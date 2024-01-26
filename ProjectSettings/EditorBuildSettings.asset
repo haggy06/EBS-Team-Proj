@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01Scenes/MoveTest.unity
     guid: 3cfb6d5795489d6468b030da6da144e7
+  - enabled: 1
+    path: Assets/01Scenes/Home.unity
+    guid: df56a67646fb9b642811a086391303da
   m_configObjects: {}
