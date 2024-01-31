@@ -21,8 +21,8 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
     public TalkUI Talk_UI => talkUI;
 
     [SerializeField]
-    private PopupBase popupBackGround;
-    public PopupBase Background_Popup => popupBackGround;
+    private ChoicePopup choicePopup;
+    public ChoicePopup Choice_Popup => choicePopup;
 
     [SerializeField]
     private PopupBase interactAlert;
@@ -55,6 +55,13 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
         diaryPopup.InitInfo();
 
         diaryPopup.CanvasHide();
+        #endregion
+
+        #region _ChoicePopup Component_
+        choicePopup = transform.Find("Choice Buttons").GetComponent<ChoicePopup>();
+        choicePopup.InitInfo();
+
+        choicePopup.CanvasHide();
         #endregion
 
         #region _InteractAlert Component_
@@ -138,6 +145,50 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
                 }
             }*/
         }
+
+        if (curBtn != null)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                if (curBtn.UpBtn != null) // 이 버튼 위쪽에 버튼이 있을 경우
+                {
+                    curBtn.DisSelected();
+                    SelectBtnChange(curBtn.UpBtn);
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (curBtn.DownBtn != null) // 이 버튼 아래쪽에 버튼이 있을 경우
+                {
+                    curBtn.DisSelected();
+
+                    SelectBtnChange(curBtn.DownBtn);
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                if (curBtn.RightBtn != null) // 이 버튼 오른쪽에 버튼이 있을 경우
+                {
+                    curBtn.DisSelected();
+
+                    SelectBtnChange(curBtn.RightBtn);
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                if (curBtn.LeftBtn != null) // 이 버튼 왼쪽에 버튼이 있을 경우
+                {
+                    curBtn.DisSelected();
+
+                    SelectBtnChange(curBtn.LeftBtn);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                curBtn.BtnClick();
+            }
+        }
     }
 
     #region _Popup Controll_
@@ -196,8 +247,6 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
         {
             curPopup.CanvasFadeOut();
             curPopup = null;
-
-            popupBackGround.CanvasFadeOut(); // UI 백그라운드 닫기
         }
 
         curBtn = null;

@@ -4,6 +4,12 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
+public enum SaveData
+{
+    PlayData,
+
+}
+
 public enum Emotion
 {
     Normal,
@@ -45,6 +51,25 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField, Range(-1f, 1f)]
     private float curStress = 0f; // ¹éºÐÀ²
     public float CurStress => curStress;
+
+    private string jsonData = null;
+    public void LoadData()
+    {
+        if (FileSaveLoader.Inst.TryLoadData(SaveData.PlayData.ToString(), out jsonData))
+        {
+            playData = JsonUtility.FromJson<PlayData>(jsonData);
+        }
+
+        currentScene = playData.lastScene;
+        InvincibleCanvasManager.Inst.Fade_Popup.StartFade(FadeMode.LoadScene);
+    }
+    public void NewData()
+    {
+        playData = new PlayData();
+
+        currentScene = playData.lastScene;
+        InvincibleCanvasManager.Inst.Fade_Popup.StartFade(FadeMode.LoadScene);
+    }
 
     private new void Awake()
     {

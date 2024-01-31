@@ -7,24 +7,40 @@ public class ButtonNode : MonoBehaviour
 {
     #region _Button Nodes_
     [SerializeField]
-    private ButtonNode upBtn;
-    public ButtonNode UpBtn => upBtn;
+    protected ButtonNode upBtn;
+    public ButtonNode UpBtn
+    {
+        get => upBtn;
+        set => upBtn = value;
+    }
 
     [SerializeField]
-    private ButtonNode downBtn;
-    public ButtonNode DownBtn => downBtn;
+    protected ButtonNode downBtn;
+    public ButtonNode DownBtn
+    {
+        get => downBtn;
+        set => downBtn = value;
+    }
 
     [SerializeField]
-    private ButtonNode rightBtn;
-    public ButtonNode RightBtn => rightBtn;
+    protected ButtonNode rightBtn;
+    public ButtonNode RightBtn
+    {
+        get => rightBtn;
+        set => rightBtn = value;
+    }
 
     [SerializeField]
-    private ButtonNode leftBtn;
-    public ButtonNode LeftBtn => leftBtn;
+    protected ButtonNode leftBtn;
+    public ButtonNode LeftBtn
+    {
+        get => leftBtn;
+        set => leftBtn = value;
+    }
     #endregion
-    private Button btn;
+    protected Button btn;
 
-    private Animator anim;
+    protected Animator anim;
 
     private void Awake()
     {
