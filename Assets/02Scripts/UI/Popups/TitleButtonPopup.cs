@@ -25,6 +25,8 @@ public class TitleButtonPopup : PopupBase
 
         btn = transform.GetChild(2).GetComponent<Button>();
         btn.onClick.AddListener(() => InvincibleCanvasManager.Inst.Fade_Popup.StartFade(FadeMode.GameQuit));
+
+        InvincibleCanvasManager.Inst.SelectBtnChange(transform.GetChild(3).GetComponent<ButtonNode>());
     }
 }
 

@@ -67,7 +67,7 @@ public class ButtonNode : MonoBehaviour
         }
     }
 
-    public void BtnClick()
+    public virtual void BtnClick()
     {
         if (anim != null)
         {

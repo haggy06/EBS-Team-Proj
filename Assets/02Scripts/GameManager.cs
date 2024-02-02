@@ -71,6 +71,14 @@ public class GameManager : MonoSingleton<GameManager>
         InvincibleCanvasManager.Inst.Fade_Popup.StartFade(FadeMode.LoadScene);
     }
 
+    [SerializeField]
+    private PlayerController curPlayer;
+    public PlayerController CurPlayer => curPlayer;
+    public void SetPlayer(PlayerController controller)
+    {
+        curPlayer = controller;
+    }
+
     private new void Awake()
     {
         base.Awake();
@@ -147,6 +155,16 @@ public class GameManager : MonoSingleton<GameManager>
     public void GoLoadingScene()
     {
         SceneManager.LoadScene((int)SCENE.Loading);
+    }
+
+    public void GamePause(bool mode)
+    {
+        Time.timeScale = mode ? 0f : 1f;
+
+        if (curPlayer != null)
+        {
+            curPlayer.ControllSwitch(mode);
+        }
     }
 
     public void GameQuit()

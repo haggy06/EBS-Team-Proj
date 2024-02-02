@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         InvincibleCanvasManager.Inst.Player_UI.StaminaRenewal(staminaGauge);
+
+        GameManager.Inst.SetPlayer(this);
     }
 
     /*
@@ -269,7 +271,10 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
     }
-
+    public void ControllSwitch(bool mode)
+    {
+        canControll = mode;
+    }
     private void SightRenewal(float newSight)
     {
 

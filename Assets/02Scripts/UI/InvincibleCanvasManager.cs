@@ -31,6 +31,10 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
     [SerializeField]
     private PopupBase diaryPopup;
     public PopupBase DiaryPopup => diaryPopup;
+
+    [SerializeField]
+    private PopupBase escPopup;
+    public PopupBase ESC_Popup => escPopup;
     #endregion
     private new void Awake()
     {
@@ -76,6 +80,13 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
         talkUI.InitInfo();
 
         talkUI.CanvasHide();
+        #endregion
+
+        #region _ESC Popup Component_
+        escPopup = transform.Find("ESC Popup").GetComponent<PopupBase>();
+        escPopup.InitInfo();
+
+        escPopup.CanvasHide();
         #endregion
     }
 
@@ -125,7 +136,7 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
             if (curPopup != null) // 열린 팝업창이 있었을 경우
             {
                 PopupClose();
-            }/*
+            }
             else // 열린 팝업창이 없었을 경우
             {
                 if (SceneManager.GetActiveScene().buildIndex > 2) // 현재 씬이 Intro(0), Loading(1), Title(2) 씬이 아닐 경우
@@ -136,14 +147,15 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
                     }
                     else
                     {
-                        GameManager.Inst.GamePause_ON();
+                        PopupOpen(escPopup);
+                        GameManager.Inst.GamePause(true);
                     }
                 }
                 else
                 {
                     Debug.Log("Pause Popup을 열 수 없는 씬입니다.");
                 }
-            }*/
+            }
         }
 
         if (curBtn != null)
@@ -220,6 +232,11 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
 
         curPopup.CanvasFadeOut();
         curBtn = null;
+
+        if (curPopup == escPopup)
+        {
+            GameManager.Inst.GamePause(false);
+        }
 
         if (delayedPopupStack.TryPop(out curPopup)) // 임시로 닫아뒀던 팝업이 있었을 경우
         { //                                                 └ 가장 마지막에 있던 팝업을 현재 팝업으로 지정
