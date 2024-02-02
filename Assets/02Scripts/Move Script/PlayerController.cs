@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
     }
     private void RunStop()
     {
-        if (!Input.GetKey(KeyCode.LeftShift))
+        if (moveDir == Vector3.zero || !Input.GetKey(KeyCode.LeftShift))
         {
             anim.SetBool(PlayerHash.Running, false);
         }
@@ -249,6 +249,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isRunning)
         {
+            StopCoroutine("StaminaRefreshLogic");
+
             StartCoroutine("StaminaRefreshLogic");
         }
     }

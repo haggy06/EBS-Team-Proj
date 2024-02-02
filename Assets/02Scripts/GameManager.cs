@@ -159,6 +159,6 @@ public class GameManager : MonoSingleton<GameManager>
         }
         Application.Quit(); // 어플리케이션 종료
 
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }
