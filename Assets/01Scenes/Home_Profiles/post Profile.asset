@@ -21,7 +21,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.15
+    value: 0.5
   color:
     overrideState: 1
     value: {r: 0.9528302, g: 0.66428447, b: 0.4719206, a: 1}
@@ -76,7 +76,7 @@ MonoBehaviour:
     value: 2.39
   keyValue:
     overrideState: 1
-    value: 1.01
+    value: 0.92
   eyeAdaptation:
     overrideState: 0
     value: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 8.24
+    value: 7.71
   threshold:
     overrideState: 0
     value: 0.99
@@ -255,13 +255,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.9222451, y: 0.9382967, z: 1, w: 0}
+    value: {x: 0.7218661, y: 0.79712653, z: 1, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 1, y: 0.94344187, z: 0.8498205, w: 0}
+    value: {x: 1, y: 0.9231491, z: 0.82393503, w: 0}
   gain:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 1, y: 0.85505295, z: 0.75540537, w: 0}
   masterCurve:
     overrideState: 0
     value:
@@ -1483,16 +1483,16 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.23638305, g: 0.3486893, b: 0.6037736, a: 1}
+    value: {r: 0.32374942, g: 0.22312212, b: 0.4339623, a: 1}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.46
+    value: 0.31
   smoothness:
-    overrideState: 0
-    value: 0.2
+    overrideState: 1
+    value: 0.72
   roundness:
     overrideState: 0
     value: 1
