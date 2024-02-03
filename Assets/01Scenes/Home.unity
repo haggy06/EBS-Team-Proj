@@ -260,7 +260,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.29803923, g: 0.33202368, b: 0.3764706, a: 0}
+  m_BackGroundColor: {r: 0.7704254, g: 0.80299145, b: 0.8207547, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -777,7 +777,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8270206, b: 0.5707547, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 7.42
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1031,15 +1031,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198095165297530740, guid: 99861b741cabc6d44ac11b6fe688ad63, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.30588236
+      value: 0.5254902
       objectReference: {fileID: 0}
     - target: {fileID: 198095165297530740, guid: 99861b741cabc6d44ac11b6fe688ad63, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.2783019
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198095165297530740, guid: 99861b741cabc6d44ac11b6fe688ad63, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8123719
+      value: 0.7337062
       objectReference: {fileID: 0}
     - target: {fileID: 198095165297530740, guid: 99861b741cabc6d44ac11b6fe688ad63, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -1047,7 +1047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198095165297530740, guid: 99861b741cabc6d44ac11b6fe688ad63, type: 3}
       propertyPath: InitialModule.startColor.minColor.a
-      value: 0.83137256
+      value: 0.4745098
       objectReference: {fileID: 0}
     - target: {fileID: 198095165297530740, guid: 99861b741cabc6d44ac11b6fe688ad63, type: 3}
       propertyPath: InitialModule.startColor.minColor.b
@@ -1055,7 +1055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198095165297530740, guid: 99861b741cabc6d44ac11b6fe688ad63, type: 3}
       propertyPath: InitialModule.startColor.minColor.g
-      value: 0.8580704
+      value: 0.84313726
       objectReference: {fileID: 0}
     - target: {fileID: 198095165297530740, guid: 99861b741cabc6d44ac11b6fe688ad63, type: 3}
       propertyPath: InitialModule.startColor.minColor.r
@@ -1216,7 +1216,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.97
+  m_Intensity: 1.09
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
