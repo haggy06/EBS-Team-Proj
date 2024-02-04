@@ -163,7 +163,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         if (curPlayer != null)
         {
-            curPlayer.ControllSwitch(mode);
+            curPlayer.ControllSwitch(!mode);
         }
     }
 

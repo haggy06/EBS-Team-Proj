@@ -1,0 +1,705 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639077b999d29554980cfb047c5ab90d, type: 3}
+  m_Name: ProjectExcel
+  m_EditorClassIdentifier: 
+  Text:
+  - id: 1001001
+    keep: 0
+    next: 1
+    npc1: 1
+    npc2: 0
+    text: "\uAFC8\uC5D0 \uADF8\uB9AC\uB358 \uCCAB \uC790\uCDE8\uC0DD\uD65C\uC774
+      \uC2DC\uC791\uB42C\uB2E4."
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001002
+    keep: 1
+    next: 1
+    npc1: 1
+    npc2: 0
+    text: "\uC870\uAE08 \uAC71\uC815 \uB418\uB294\uAC74\u2026 "
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001003
+    keep: 0
+    next: 1
+    npc1: 1
+    npc2: 0
+    text: "\uAE30\uBD84 \uD0D3\uC77C\uAC70\uC57C!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001201
+    keep: 1
+    next: 1
+    npc1: 16
+    npc2: 0
+    text: "\uC774\uC81C \uD63C\uC790\uC11C \uBC25\uB3C4 \uD574\uBA39\uACE0,"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001202
+    keep: 0
+    next: 1
+    npc1: 16
+    npc2: 0
+    text: "\uD63C\uC790\uC11C \uD574\uB098\uAC00\uB294 \uAC70\uC57C!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001203
+    keep: 0
+    next: 1
+    npc1: 16
+    npc2: 0
+    text: "\uC5C4\uCCAD \uC124\uB80C\uB2E4~"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001204
+    keep: 0
+    next: 1
+    npc1: 16
+    npc2: 0
+    text: "\uC815\uB9AC\uB9CC \uB2E4\uD558\uBA74 \uCE5C\uAD6C\uB3C4 \uBD80\uB974\uACE0
+      \uADF8\uB7F4\uD150\uB370"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001205
+    keep: 0
+    next: 1
+    npc1: 16
+    npc2: 0
+    text: "\uC77C\uB2E8 \uC0DD\uD65C\uC5D0 \uC775\uC219\uD574\uC9C0\uBA74 \uCD08\uB300\uD574\uC57C\uACA0\uB2E4!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001206
+    keep: 0
+    next: 1
+    npc1: 16
+    npc2: 0
+    text: "\uC5C4\uB9C8\uB294 \uC9D1\uC73C\uB85C \uAE08\uBC29 \uB3CC\uC544\uC62C\uAC70\uB77C\uACE0
+      \uD588\uB294\uB370\u2026"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001207
+    keep: 0
+    next: 1
+    npc1: 16
+    npc2: 0
+    text: "\uC808\uB300 \uADF8\uB7F4 \uC218 \uC5C6\uC9C0!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001209
+    keep: 1
+    next: 1
+    npc1: 2
+    npc2: 4
+    text: "\uC9D0 \uC815\uB9AC\uB294 \uB098\uC911\uC5D0 \uD558\uACE0!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001210
+    keep: 0
+    next: 0
+    npc1: 2
+    npc2: 4
+    text: "\uC77C\uB2E8 OT \uB098\uAC08 \uC900\uBE44\uB3C4 \uD574\uBCFC\uAE4C?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001004
+    keep: 1
+    next: 1
+    npc1: 3
+    npc2: 4
+    text: "\uC548\uB155\uD558\uC2ED\uB2C8\uAE4C!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001005
+    keep: 1
+    next: 1
+    npc1: 3
+    npc2: 7
+    text: "23\uD559\uBC88 20\uC0B4!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001006
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 7
+    text: "\uB098\uC8FC\uD76C \uC785\uB2C8\uB2E4!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1003001
+    keep: 0
+    next: 1
+    npc1: 11
+    npc2: 12
+    text: "\u2026"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1002001
+    keep: 1
+    next: 1
+    npc1: 14
+    npc2: 16
+    text: "\u2026\uC5B4!?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1002002
+    keep: 0
+    next: 0
+    npc1: 14
+    npc2: 16
+    text: "\u2026\uB098\uC8FC\uD76C?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001007
+    keep: 1
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "\uC6B0....\uC6B0\uC6B1"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001008
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "( \uB108\uBB34 \uBB34\uB9AC\uD588\uB098\u2026 )"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001009
+    keep: 0
+    next: 0
+    npc1: 3
+    npc2: 8
+    text: "\uC800\u2026\uC800\uB294 \uC774\uB9CC \uAC00\uBCFC\uAED8\uC694..!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001010
+    keep: 1
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "\uC73C\uC73C\u2026 \uADF8\uB798\uB3C4"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001011
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 4
+    text: "\uB098\uB984 \uAD1C\uCC2E\uC558\uB358 \uAC70\uAC19\uC544..!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004001
+    keep: 0
+    next: 1
+    npc1: 0
+    npc2: 0
+    text: "\uC57C\uC639~"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001012
+    keep: 1
+    next: 1
+    npc1: 3
+    npc2: 5
+    text: "\uC751? \uACE0\uC591\uC774!?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001013
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 5
+    text: "\uC5B4\uB528\uC9C0?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004001
+    keep: 0
+    next: 1
+    npc1: 18
+    npc2: 0
+    text: "\uC5EC\uAE30\uC57C!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001012
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 7
+    text: "\uC6B0\uC640! \uACE0\uC591\uC774\u2026"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001013
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "\uACE0\uC591\uC774\uAC00 \uB9D0\uC744 \uD558\uC796\uC544!!??"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001014
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 9
+    text: "\uC73C\uC544\uC544\u2026 \uB0B4\uAC00 \uB108\uBB34 \uB9C8\uC168\uB098\uBCF4\uAD6C\uB098\u2026."
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004002
+    keep: 1
+    next: 1
+    npc1: 18
+    npc2: 0
+    text: "\uC9C4\uC815\uD574!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004003
+    keep: 0
+    next: 1
+    npc1: 19
+    npc2: 0
+    text: "\uB09C \uC774\uC0C1\uD55C \uACE0\uC591\uC774\uAC00 \uC544\uB2C8\uB77C\uAD6C~"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004004
+    keep: 0
+    next: 1
+    npc1: 18
+    npc2: 0
+    text: "\uB098\uB294 \uB108\uC758 \uC0C1\uC0C1\uC5D0\uC11C \uD0DC\uC5B4\uB09C
+      \uACE0\uC591\uC774\uC57C"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001015
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 6
+    text: "\uC0C1\u2026.\uC0C1?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004005
+    keep: 0
+    next: 1
+    npc1: 18
+    npc2: 0
+    text: "\uC751! \uC0C1\uC0C1!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004006
+    keep: 0
+    next: 1
+    npc1: 19
+    npc2: 0
+    text: "\uAC71\uC815\uB9C8~ \uAC74\uAC15\uC0C1\uC758 \uBB38\uC81C\uB294 \uC5C6\uC73C\uB2C8\uAE4C!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001016
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "\uADF8\u2026 \uADF8\uB7EC\uBA74 \uB2E4\uD589\uC774\uB124"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001211
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC624\uB298 \uC5B4\uB560\uC5B4?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001212
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC624\u2026\uC624\uB298?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001213
+    keep: 1
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uCC98\uC74C \uBCF4\uB294 \uC0AC\uB78C\uB4E4\uC774 \uB9CE\uC558\uC5B4,
+      \uC624\uB79C\uB9CC\uC5D0 \uBCF4\uB294 \uCE5C\uAD6C\uB3C4 \uC788\uACE0\u2026"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001214
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC751\uC751 \uADF8\uB798\uC11C?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001215
+    keep: 1
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uADF8\uB798\uC11C\u2026 \uC990\uAC70\uC6E0\uC5B4!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001216
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC870\uAE08 \uD798\uB4E4\uAE34 \uD588\uC9C0\uB9CC\u2026"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001217
+    keep: 1
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uADF8\uB7AC\uAD6C\uB098~"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001218
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uADF8\uB798\uB3C4 \uC7A5\uD558\uB124! \uD63C\uC790\uC11C \uD574\uB0B4\uACE0"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001219
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uD5E4... \uADF8\uB7F0\uAC00?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001220
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC751! \uADF8\uB7FC \uADF8\uB7FC~"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001221
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC5D0\uD5E4\uC774~ \uBCC4\uAC70 \uC544\uB2C8\uC57C~ \uADF8\uB0E5 \uB9D0\uB9CC
+      \uD588\uC5B4~"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001222
+    keep: 1
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC774\uC81C \uC774\uB7F0 \uC77C\uC774 \uB9CE\uC544\uC9C0\uAC8C \uB420\uAEBC\uC57C"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001223
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uADF8\uB7F4\uB54C\uB9C8\uB2E4 \uB0B4\uAC00 \uB3C4\uC640\uC8FC\uB7EC \uC62C\uAED8"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001224
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uB108\uAC00?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001225
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC751! \uB0B4\uAC00"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001226
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uBB3C\uB860, \uD56D\uC0C1\uC740 \uC544\uB2C8\uACE0"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001227
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC5B4\uB5BB\uAC8C \uB3C4\uC640\uC8FC\uB294\uB370?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001228
+    keep: 1
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC644\uC804 \uAC70\uCC3D\uD558\uC9C4 \uC54A\uC544! \uADF8\uB0E5\u2026"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001229
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uC774\uB807\uAC8C \uB300\uD654 \uD558\uB294 \uC815\uB3C4?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001230
+    keep: 0
+    next: 1
+    npc1: 23
+    npc2: 0
+    text: "\uBB50\uC57C \uADF8\uAC8C\u2026"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001016
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 7
+    text: "\uC644\uC804 \uC2E0\uAE30\uD558\uC796\uC544!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004007
+    keep: 0
+    next: 1
+    npc1: 18
+    npc2: 0
+    text: "\uADF8\uB7FC \uC9D1\uC5D0\uC11C \uBCF4\uC790!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001017
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "\uC5E5? \uC9D1? \uC9D1 \uAC19\uC774 \uAC00\uB294\uAC70\uC57C?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001018
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "\uACE0\uC591\uC544!!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001019
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 6
+    text: "\uC5B8\uC81C \uAC04\uAC70\uC57C..."
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001020
+    keep: 0
+    next: 0
+    npc1: 3
+    npc2: 4
+    text: "\uC77C\uB2E8 \uC9D1\uC5D0 \uAC00\uC790"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001021
+    keep: 1
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "\uD6C4\u2026 \uC624\uB298 \uB108\uBB34 \uD798\uB4E4\uC5C8\u2026"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001022
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 9
+    text: "\uB2E4..?!!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001023
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 5
+    text: "\uACE0\uC591\uC544! \uC5B4\uB5BB\uAC8C \uB4E4\uC5B4\uC628\uAC70\uC57C?!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004007
+    keep: 0
+    next: 1
+    npc1: 19
+    npc2: 0
+    text: "\uD5FF\uD5E4~ \uB098\uB294 \uB124 \uC0C1\uC0C1\uB3D9\uBB3C\uC774\uB77C\uB2C8\uAE4C?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004008
+    keep: 0
+    next: 1
+    npc1: 18
+    npc2: 0
+    text: "\uADF8\uB7EC\uB2C8\uAE4C \uC774\uB807\uAC8C \uC788\uC9C0!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001024
+    keep: 1
+    next: 1
+    npc1: 3
+    npc2: 8
+    text: "\uADF8\u2026 \uADF8\uB7F0\uAC00?"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001025
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 7
+    text: "\uBB50! \uAD1C\uCC2E\uACA0\uC9C0!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004009
+    keep: 0
+    next: 1
+    npc1: 18
+    npc2: 0
+    text: "\uC77C\uB2E8, \uC9D1\uC5D0 \uC624\uBA74 \uC77C\uAE30 \uC4F0\uB294 \uC2B5\uAD00\uC744
+      \uB4E4\uC774\uB3C4\uB85D \uD558\uC790!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004010
+    keep: 1
+    next: 1
+    npc1: 19
+    npc2: 0
+    text: "\uB098\uC911\uC5D0 \uBCF4\uBA74 \uC88B\uC740 \uCD94\uC5B5\uC774 \uB418\uB2C8\uAE4C!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1004011
+    keep: 0
+    next: 1
+    npc1: 18
+    npc2: 0
+    text: "\uD558\uB8E8\uAC00 \uB05D\uB098\uBA74 \uAF2D \uC4F0\uB294\uAC70\uC57C"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001024
+    keep: 0
+    next: 1
+    npc1: 3
+    npc2: 4
+    text: "\uC751! \uADF8\uB7FC \uC624\uB298\uBD80\uD130 \uAFB8\uC900\uD788 \uD574\uBCFC\uAC8C!"
+    button1: 0
+    button2: 0
+    button3: 0
+  - id: 1001025
+    keep: 0
+    next: 0
+    npc1: 3
+    npc2: 4
+    text: "( \uCC45\uC0C1\uC5D0\uC11C \uB2E4\uC774\uC5B4\uB9AC\uB97C \uD3B4\uBCF4\uC790!
+      )"
+    button1: 0
+    button2: 0
+    button3: 0
+  Interaction:
+  - test: 0
+  Event:
+  - id: 1
+    text: "\uBC84\uD2BC 1"
+    stressEvent: 50
+    talkEvent: 1001001

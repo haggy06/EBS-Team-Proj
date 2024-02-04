@@ -1,10 +1,10 @@
 [System.Serializable]
-public class DB_Entity
+public class DB_Text
 {
     public int id;
     
     public bool keep;
-    public bool isContinue;
+    public bool next;
     
     public int npc1;
     public int npc2;
