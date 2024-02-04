@@ -26,7 +26,7 @@ public class TalkUI : PopupBase
             GameManager.Inst.CurPlayer.ControllSwitch(false);
         }
     }
-    protected override void FadeOutFinished()
+    protected override void OnDeactive()
     {
         if (GameManager.Inst.CurPlayer != null)
         {

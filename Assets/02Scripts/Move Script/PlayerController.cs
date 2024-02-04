@@ -203,7 +203,9 @@ public class PlayerController : MonoBehaviour
                 {
                     InvincibleCanvasManager.Inst.CurActTarget.Interact();
 
-                    //canControll = false;
+                    anim.SetBool(PlayerHash.Walking, false);
+                    anim.SetBool(PlayerHash.Running, false);
+                    canControll = false;
                 }
             }
             /*

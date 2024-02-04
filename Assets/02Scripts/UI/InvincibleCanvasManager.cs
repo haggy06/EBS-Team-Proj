@@ -249,6 +249,10 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
             {
                 GameObject.FindWithTag("Player").GetComponent<PopupBase>().CanvasFadeIn(); // 타이틀 씬에선 타이틀 버튼 팝업에만 Player 태그가 있으므로 타이틀 버튼의 FadeIn()을 실행함.
             }
+            else if (GameManager.Inst.CurPlayer != null)
+            {
+                GameManager.Inst.CurPlayer.ControllSwitch(true);
+            }
 
             curPopup = null; // 현재 팝업을 null로 설정
 
