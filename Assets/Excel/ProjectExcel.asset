@@ -44,8 +44,8 @@ MonoBehaviour:
   - id: 1001201
     keep: 1
     next: 1
-    npc1: 16
-    npc2: 0
+    npc1: 2
+    npc2: 7
     text: "\uC774\uC81C \uD63C\uC790\uC11C \uBC25\uB3C4 \uD574\uBA39\uACE0,"
     button1: 0
     button2: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   - id: 1001202
     keep: 0
     next: 1
-    npc1: 16
-    npc2: 0
+    npc1: 2
+    npc2: 7
     text: "\uD63C\uC790\uC11C \uD574\uB098\uAC00\uB294 \uAC70\uC57C!"
     button1: 0
     button2: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
   - id: 1001203
     keep: 0
     next: 1
-    npc1: 16
-    npc2: 0
+    npc1: 2
+    npc2: 7
     text: "\uC5C4\uCCAD \uC124\uB80C\uB2E4~"
     button1: 0
     button2: 0
@@ -71,8 +71,8 @@ MonoBehaviour:
   - id: 1001204
     keep: 0
     next: 1
-    npc1: 16
-    npc2: 0
+    npc1: 2
+    npc2: 4
     text: "\uC815\uB9AC\uB9CC \uB2E4\uD558\uBA74 \uCE5C\uAD6C\uB3C4 \uBD80\uB974\uACE0
       \uADF8\uB7F4\uD150\uB370"
     button1: 0
@@ -81,8 +81,8 @@ MonoBehaviour:
   - id: 1001205
     keep: 0
     next: 1
-    npc1: 16
-    npc2: 0
+    npc1: 2
+    npc2: 4
     text: "\uC77C\uB2E8 \uC0DD\uD65C\uC5D0 \uC775\uC219\uD574\uC9C0\uBA74 \uCD08\uB300\uD574\uC57C\uACA0\uB2E4!"
     button1: 0
     button2: 0
@@ -90,8 +90,8 @@ MonoBehaviour:
   - id: 1001206
     keep: 0
     next: 1
-    npc1: 16
-    npc2: 0
+    npc1: 2
+    npc2: 4
     text: "\uC5C4\uB9C8\uB294 \uC9D1\uC73C\uB85C \uAE08\uBC29 \uB3CC\uC544\uC62C\uAC70\uB77C\uACE0
       \uD588\uB294\uB370\u2026"
     button1: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   - id: 1001207
     keep: 0
     next: 1
-    npc1: 16
-    npc2: 0
+    npc1: 2
+    npc2: 4
     text: "\uC808\uB300 \uADF8\uB7F4 \uC218 \uC5C6\uC9C0!"
     button1: 0
     button2: 0
