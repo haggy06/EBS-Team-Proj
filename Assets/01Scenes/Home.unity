@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17970613, g: 0.22501191, b: 0.3065342, a: 1}
+  m_IndirectSpecularColor: {r: 0.17970657, g: 0.22501263, b: 0.30653536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 74fa00da934d3ce45b03171fee037d40, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 45f1589dbe8d5fd4c96e84a1e545d0a2, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 0.91
@@ -1569,7 +1569,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 0.53
   stopAction: 0
-  cullingMode: 1
+  cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
@@ -6305,7 +6305,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 2
       minColor: {r: 0, g: 0.84313726, b: 1, a: 0.4745098}
-      maxColor: {r: 1, g: 0.7337062, b: 0, a: 0.5254902}
+      maxColor: {r: 1, g: 0.8427673, b: 0.41037738, a: 0.5254902}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
