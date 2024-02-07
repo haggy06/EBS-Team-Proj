@@ -40,6 +40,7 @@ public class GameManager : MonoSingleton<GameManager>
     private PlayData playData;
     public PlayData Play_Data => playData;
     #endregion
+
     private Emotion curEmotion;
     public Emotion CurEmotion
     {
@@ -51,6 +52,12 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField, Range(-1f, 1f)]
     private float curStress = 0f; // ¹éºÐÀ²
     public float CurStress => curStress;
+
+    public void StressChange(int i)
+    {
+        curStress += (i / 100f);
+        InvincibleCanvasManager.Inst.Player_UI.StressRenewal_Lerp();
+    }
 
     private string jsonData = null;
     public void LoadData()

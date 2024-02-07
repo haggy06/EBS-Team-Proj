@@ -121,8 +121,8 @@ MonoBehaviour:
     npc1: 2
     npc2: 4
     text: "\uC77C\uB2E8 OT \uB098\uAC08 \uC900\uBE44\uB3C4 \uD574\uBCFC\uAE4C?"
-    button1: 0
-    button2: 0
+    button1: 1
+    button2: 1
     button3: 0
   - id: 1001004
     keep: 1
@@ -700,6 +700,6 @@ MonoBehaviour:
   - test: 0
   Event:
   - id: 1
-    text: "\uBC84\uD2BC 1"
+    text: "\uC608\uC2DC \uBC84\uD2BC "
     stressEvent: 50
-    talkEvent: 1001001
+    talkEvent: 1001004

@@ -364,6 +364,8 @@ MonoBehaviour:
   downBtn: {fileID: 1607363493}
   rightBtn: {fileID: 0}
   leftBtn: {fileID: 0}
+  btn: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!95 &133442590
 Animator:
   serializedVersion: 5
@@ -872,6 +874,8 @@ MonoBehaviour:
   downBtn: {fileID: 1625748300}
   rightBtn: {fileID: 0}
   leftBtn: {fileID: 0}
+  btn: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!95 &1607363494
 Animator:
   serializedVersion: 5
@@ -1032,6 +1036,8 @@ MonoBehaviour:
   downBtn: {fileID: 133442589}
   rightBtn: {fileID: 0}
   leftBtn: {fileID: 0}
+  btn: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!95 &1625748301
 Animator:
   serializedVersion: 5

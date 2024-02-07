@@ -13,7 +13,8 @@ public class ChoicePopup : PopupBase
     [SerializeField]
     private ChoiceButton btn3;
 
-    public void SetChoice(string choice1)
+
+    public void SetChoice(DB_Event choice1)
     {
         btn1.gameObject.SetActive(true);
         btn2.gameObject.SetActive(false);
@@ -22,11 +23,13 @@ public class ChoicePopup : PopupBase
         btn1.UpBtn = null;
         btn1.DownBtn = null;
 
-        btn1.Text.text = choice1;
+        btn1.Text.text = choice1.text;
+
+        btn1.EventChange(choice1.talkEvent, choice1.stressEvent);
 
         CanvasFadeIn();
     }
-    public void SetChoice(string choice1, string choice2)
+    public void SetChoice(DB_Event choice1, DB_Event choice2)
     {
         btn1.gameObject.SetActive(true);
         btn2.gameObject.SetActive(true);
@@ -37,12 +40,15 @@ public class ChoicePopup : PopupBase
         btn2.UpBtn = btn1;
         btn2.DownBtn = btn1;
 
-        btn1.Text.text = choice1;
-        btn2.Text.text = choice2;
+        btn1.Text.text = choice1.text;
+        btn2.Text.text = choice2.text;
+
+        btn1.EventChange(choice1.talkEvent, choice1.stressEvent);
+        btn2.EventChange(choice2.talkEvent, choice2.stressEvent);
 
         CanvasFadeIn();
     }
-    public void SetChoice(string choice1, string choice2, string choice3)
+    public void SetChoice(DB_Event choice1, DB_Event choice2, DB_Event choice3)
     {
         btn1.gameObject.SetActive(true);
         btn2.gameObject.SetActive(true);
@@ -55,10 +61,27 @@ public class ChoicePopup : PopupBase
         btn3.UpBtn = btn2;
         btn3.DownBtn = btn1;
 
-        btn1.Text.text = choice1;
-        btn2.Text.text = choice2;
-        btn3.Text.text = choice3;
+        btn1.Text.text = choice1.text;
+        btn2.Text.text = choice2.text;
+        btn3.Text.text = choice3.text;
+
+        btn1.EventChange(choice1.talkEvent, choice1.stressEvent);
+        btn2.EventChange(choice2.talkEvent, choice2.stressEvent);
+        btn3.EventChange(choice3.talkEvent, choice3.stressEvent);
 
         CanvasFadeIn();
+    }
+
+    public void ChoiceEnd()
+    {
+        CanvasFadeOut();
+    }
+
+    protected override void OnActive()
+    {
+        if (firstBtnNode != null)
+        {
+            InvincibleCanvasManager.Inst.SelectBtnChange(firstBtnNode);
+        }
     }
 }

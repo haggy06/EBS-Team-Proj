@@ -44,8 +44,6 @@ public class TalkUI : PopupBase
     private string lastTalk = null;
     public void SetTextClass(int targetID)
     {
-        CanvasFadeIn();
-
         for (int i = 0; i < projectExcel.Text.Count; i++)
         {
             if (projectExcel.Text[i].id == targetID)
@@ -133,7 +131,28 @@ public class TalkUI : PopupBase
         {
             if (writeComplete) // 텍스트 완성이 되어 있었을 경우
             {
-                if (textClass.next) // 이어지는 문장이 있을 경우
+                if (textClass.button1 != 0) // 지정된 첫번째 버튼이 있을 경우
+                {
+                    if (!InvincibleCanvasManager.Inst.Choice_Popup.PopupOpened) // 팝업이 열리지 않았을 경우
+                    {
+                        if (textClass.button2 != 0) // 지정된 두번째 버튼이 있을 경우
+                        {
+                            if (textClass.button3 != 0) // 지정된 세번째 버튼이 있을 경우
+                            {
+                                InvincibleCanvasManager.Inst.Choice_Popup.SetChoice(projectExcel.Event[textClass.button1 - 1], projectExcel.Event[textClass.button2 - 1], projectExcel.Event[textClass.button3 - 1]);
+                            }
+                            else
+                            {
+                                InvincibleCanvasManager.Inst.Choice_Popup.SetChoice(projectExcel.Event[textClass.button1 - 1], projectExcel.Event[textClass.button2 - 1]);
+                            }
+                        }
+                        else
+                        {
+                            InvincibleCanvasManager.Inst.Choice_Popup.SetChoice(projectExcel.Event[textClass.button1 - 1]);
+                        }
+                    }
+                }
+                else if (textClass.next) // 이어지는 문장이 있을 경우
                 {
                     if (!textClass.keep) // 문장이 유지되지 않을 경우
                     {

@@ -11,6 +11,7 @@ public class TalkInteract : InteractBase
     {
         base.Interact();
 
+        InvincibleCanvasManager.Inst.Talk_UI.CanvasFadeIn();
         InvincibleCanvasManager.Inst.Talk_UI.SetTextClass(talkID);
     }
 }

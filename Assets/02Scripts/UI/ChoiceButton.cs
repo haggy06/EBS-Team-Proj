@@ -11,17 +11,24 @@ public class ChoiceButton : ButtonNode
     private TextMeshProUGUI text;
     public TextMeshProUGUI Text => text;
 
-    private Button myBtn;
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
         text = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        myBtn = GetComponent<Button>();
+
+        btn.onClick.AddListener(() => InvincibleCanvasManager.Inst.Talk_UI.SetTextClass(textID));
+        btn.onClick.AddListener(() => GameManager.Inst.StressChange(stressEvent));
+        btn.onClick.AddListener(() => InvincibleCanvasManager.Inst.SelectBtnChange(null));
+        btn.onClick.AddListener(InvincibleCanvasManager.Inst.Choice_Popup.ChoiceEnd);
     }
+    [SerializeField]
+    private int textID = 0;
 
-    public void EventChange()
+    [SerializeField]
+    private int stressEvent = 0;
+    public void EventChange(int id, int stress)
     {
-        myBtn.onClick.RemoveAllListeners();
-
-        // myBtn.onClick.AddListener();
+        textID = id;
+        stressEvent = stress;
     }
 }

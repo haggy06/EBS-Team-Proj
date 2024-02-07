@@ -147,8 +147,11 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
                     }
                     else
                     {
-                        PopupOpen(escPopup);
-                        GameManager.Inst.GamePause(true);
+                        if (!talkUI.PopupOpened)
+                        {
+                            PopupOpen(escPopup);
+                            GameManager.Inst.GamePause(true);
+                        }
                     }
                 }
                 else

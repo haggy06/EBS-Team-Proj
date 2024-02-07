@@ -38,25 +38,19 @@ public class ButtonNode : MonoBehaviour
         set => leftBtn = value;
     }
     #endregion
+
+    [Space(5)]
+
+    [SerializeField]
     protected Button btn;
 
+    [SerializeField]
     protected Animator anim;
 
-    private void Awake()
+    protected void Awake()
     {
         btn = GetComponent<Button>();
         TryGetComponent<Animator>(out anim);
-
-        StartCoroutine("Test");
-    }
-    private IEnumerator Test()
-    {
-        while (true)
-        {
-            yield return YieldInstructionCache.WaitForSeconds(0.5f);
-
-            //anim.SetTrigger(ButtonHashes.Highlighted);
-        }
     }
 
     public void Highlight_This() // 버튼의 Highlight 애니메이션에서 이벤트로 실행시킬 예정

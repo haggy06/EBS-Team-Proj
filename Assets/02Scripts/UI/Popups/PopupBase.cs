@@ -18,8 +18,11 @@ public class PopupBase : MonoBehaviour
     public CanvasGroup MyCanvasGroup => myCanvasGroup;
 
     [SerializeField, Tooltip("팝업이 떴을 때 자동으로 선택될 버튼. 비워둬도 됨")]
-    private ButtonNode firstBtnNode;
+    protected ButtonNode firstBtnNode;
     public ButtonNode FirstBtnNode => firstBtnNode;
+
+    protected bool popupOpened;
+    public bool PopupOpened => popupOpened;
 
     /*
     [SerializeField]
@@ -38,6 +41,7 @@ public class PopupBase : MonoBehaviour
         //Invoke("OnActive", 0.02f);
         OnActive();
 
+        popupOpened = true;
         LeanTween.alphaCanvas(myCanvasGroup, 1f, fadeDuration).setEase(LeanTweenType.linear).setIgnoreTimeScale(true).setOnComplete(FadeInFinished);
 
         //Invoke("CanvasActive", 0.02f);
@@ -60,6 +64,7 @@ public class PopupBase : MonoBehaviour
         //Invoke("OnDeactive", 0.02f);
         OnDeactive();
 
+        popupOpened = false;
         LeanTween.alphaCanvas(myCanvasGroup, 0f, fadeDuration).setEase(LeanTweenType.linear).setIgnoreTimeScale(true).setOnComplete(FadeOutFinished);
 
         //Invoke("CanvasDeactive", 0.02f);
@@ -77,6 +82,7 @@ public class PopupBase : MonoBehaviour
 
     private void CanvasDeactive()
     {
+        popupOpened = false;
         Debug.Log(gameObject.name + " 비활성화");
 
         myCanvasGroup.blocksRaycasts = false;
@@ -85,6 +91,7 @@ public class PopupBase : MonoBehaviour
 
     private void CanvasActive()
     {
+        popupOpened = true;
         Debug.Log(gameObject.name + " 활성화");
 
         myCanvasGroup.blocksRaycasts = true;
