@@ -21,7 +21,18 @@ public class TitleButtonPopup : PopupBase
 
         btn = transform.GetChild(1).GetComponent<Button>();
         btn.onClick.AddListener(GameManager.Inst.LoadData);
-        btn.enabled = FileSaveLoader.Inst.TryLoadData(SaveData.PlayData.ToString(), out jsonData);
+
+        if (FileSaveLoader.Inst.TryLoadData(SaveData.PlayData.ToString(), out string str))
+        {
+            btn.gameObject.SetActive(true);
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<ButtonNode>().DownBtn = transform.GetChild(2).GetComponent<ButtonNode>();
+            transform.GetChild(2).GetComponent<ButtonNode>().UpBtn = transform.GetChild(0).GetComponent<ButtonNode>();
+
+            btn.gameObject.SetActive(false);
+        }
 
         btn = transform.GetChild(2).GetComponent<Button>();
         btn.onClick.AddListener(() => InvincibleCanvasManager.Inst.Fade_Popup.StartFade(FadeMode.GameQuit));

@@ -65,16 +65,25 @@ public class GameManager : MonoSingleton<GameManager>
         if (FileSaveLoader.Inst.TryLoadData(SaveData.PlayData.ToString(), out jsonData))
         {
             playData = JsonUtility.FromJson<PlayData>(jsonData);
-        }
 
-        currentScene = playData.lastScene;
-        InvincibleCanvasManager.Inst.Fade_Popup.StartFade(FadeMode.LoadScene);
+            LoadSceneFromData();
+        }
+        else
+        {
+            Debug.LogError("불러올 데이터가 없습니다");
+        }
     }
     public void NewData()
     {
         playData = new PlayData();
 
-        currentScene = playData.lastScene;
+        LoadSceneFromData();
+    }
+
+    private void LoadSceneFromData()
+    {
+        currentScene = playData.morning ? SCENE.Home_Morning : SCENE.Home_Night;
+
         InvincibleCanvasManager.Inst.Fade_Popup.StartFade(FadeMode.LoadScene);
     }
 

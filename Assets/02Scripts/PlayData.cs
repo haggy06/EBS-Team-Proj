@@ -3,7 +3,8 @@
 [System.Serializable]
 public class PlayData
 {
-    public SCENE lastScene = SCENE.MoveTest;
     public float stressGauge = 0f;
 
+    public bool morning = true;
+    public int curDay = 1;
 }
