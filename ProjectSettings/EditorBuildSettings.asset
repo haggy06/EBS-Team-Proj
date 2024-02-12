@@ -15,15 +15,15 @@ EditorBuildSettings:
     path: Assets/01Scenes/Title.unity
     guid: a80c6f4b70d26954d89467d20ea5ca73
   - enabled: 1
-    path: Assets/01Scenes/SampleScene0.unity
-    guid: da4f6a76c6e6bc5488498cad04c73e7a
+    path: Assets/01Scenes/Home_Morning.unity
+    guid: 66693305c8cea234a82885f6252398e4
   - enabled: 1
-    path: Assets/01Scenes/SampleScene1.unity
-    guid: ee84ea83d55bcd048857e25488cc35f3
+    path: Assets/01Scenes/Home_Night.unity
+    guid: 1c633cd00f000ea42a3aea6db5ce1be7
   - enabled: 1
-    path: Assets/01Scenes/MoveTest.unity
-    guid: 3cfb6d5795489d6468b030da6da144e7
+    path: Assets/01Scenes/School.unity
+    guid: 5d7747d5cc4c2224da685f996986cf69
   - enabled: 1
-    path: Assets/01Scenes/Home.unity
-    guid: df56a67646fb9b642811a086391303da
+    path: Assets/01Scenes/OT.unity
+    guid: fb0445f836f41674bb211da90c6d9ade
   m_configObjects: {}

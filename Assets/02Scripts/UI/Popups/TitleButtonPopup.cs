@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class TitleButtonPopup : PopupBase
 {
-    [SerializeField]
-    private SCENE moveScene;
-
-    private string jsonData = null;
     private void Awake()
     {
         InitInfo();

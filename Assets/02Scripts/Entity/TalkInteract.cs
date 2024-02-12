@@ -5,7 +5,7 @@ using UnityEngine;
 public class TalkInteract : InteractBase
 {
     [SerializeField]
-    private int talkID;
+    protected int talkID;
 
      public override void Interact()
     {
