@@ -7,5 +7,6 @@ public enum SCENE
     Home_Night,
     School,
     OT,
+    Road,
 
 }

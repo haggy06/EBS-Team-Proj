@@ -17,7 +17,7 @@ public class ChoiceButton : ButtonNode
         text = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
         btn.onClick.AddListener(() => InvincibleCanvasManager.Inst.Talk_UI.SetTextClass(textID));
-        btn.onClick.AddListener(() => GameManager.Inst.StressChange(stressEvent));
+        btn.onClick.AddListener(() => GameManager.Inst.StressChange_Lerp(stressEvent));
         btn.onClick.AddListener(() => InvincibleCanvasManager.Inst.SelectBtnChange(null));
         btn.onClick.AddListener(InvincibleCanvasManager.Inst.Choice_Popup.ChoiceEnd);
     }

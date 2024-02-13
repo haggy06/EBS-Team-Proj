@@ -5,7 +5,14 @@ using UnityEngine;
 using System.IO;
 
 //효과음 목록
-public enum Sfx { ButtonClick, Walk, Run, Exhaustion }
+public enum Sfx 
+{
+    ButtonClick, 
+    Walk, 
+    Run, 
+    Exhaustion,
+
+}
 
 public class AudioManager : MonoSingleton<AudioManager>
 {

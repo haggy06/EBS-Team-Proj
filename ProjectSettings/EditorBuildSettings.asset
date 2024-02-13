@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01Scenes/OT.unity
     guid: fb0445f836f41674bb211da90c6d9ade
+  - enabled: 1
+    path: Assets/01Scenes/Road.unity
+    guid: d43c2ba6bc2c3fd47b2ff5ccb6d15342
   m_configObjects: {}

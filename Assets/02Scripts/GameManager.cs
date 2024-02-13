@@ -53,10 +53,15 @@ public class GameManager : MonoSingleton<GameManager>
     private float curStress = 0f; // ¹éºÐÀ²
     public float CurStress => curStress;
 
-    public void StressChange(int i)
+    public void StressChange_Lerp(float f)
     {
-        curStress += (i / 100f);
+        curStress = Mathf.Clamp(curStress + (f / 100f), -1f, 1f);
         InvincibleCanvasManager.Inst.Player_UI.StressRenewal_Lerp();
+    }
+    public void StressChange_Instant(float f)
+    {
+        curStress = Mathf.Clamp(curStress + (f / 100f), -1f, 1f);
+        InvincibleCanvasManager.Inst.Player_UI.StressRenewal_Instant();
     }
 
     private string jsonData = null;

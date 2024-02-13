@@ -5,6 +5,6 @@ public class PlayData
 {
     public float stressGauge = 0f;
 
-    public bool morning = true;
+    public bool morning = false;
     public int curDay = 1;
 }
