@@ -1442,8 +1442,6 @@ MonoBehaviour:
     button1: 0
     button2: 0
     button3: 0
-  Interaction:
-  - test: 0
   Event:
   - id: 1
     text: "\uC5D0\uD5E4~ \uADF8\uB54C\uB294 \uB108\uBB34 \uC5B4\uB838\uC9C0~"
