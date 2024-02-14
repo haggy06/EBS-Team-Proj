@@ -832,10 +832,10 @@ MonoBehaviour:
   canControll: 1
   isRunning: 0
   walkSpeed: 5
-  runSpeed: 8
+  runSpeed: 6.5
   staminaGauge: 1
   staminaUsagePerSec: 0.5
-  staminaRecoveryPerSec: 0.1
+  staminaRecoveryPerSec: 0.25
   exhaustionTerm: 2
   moveDir: {x: 0, y: 0, z: 0}
   lookingDir: {x: 0, y: 0}

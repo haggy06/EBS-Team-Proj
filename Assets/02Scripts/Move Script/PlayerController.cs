@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private bool canControll = true;
+    public bool CanCotroll => canControll;
+
     [SerializeField]
     private bool isRunning = false;
     [SerializeField]
@@ -58,8 +60,6 @@ public class PlayerController : MonoBehaviour
             if (moveDir != Vector3.zero) // 이동을 했을 경우
             {
                 anim.SetBool(PlayerHash.Walking, true);
-
-                Debug.Log(MoveSpeed);
                 /*
                 velo.x = Mathf.Clamp(rigid.velocity.x + MoveSpeed * moveDir.x * Time.deltaTime, -MoveSpeed, MoveSpeed);
                 velo.y = Mathf.Clamp(rigid.velocity.y + MoveSpeed * moveDir.y * Time.deltaTime, -MoveSpeed, MoveSpeed);
@@ -197,8 +197,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
+                Debug.Log("C키 입력");
+
                 if (InvincibleCanvasManager.Inst.CurActTarget != null)
                 {
                     InvincibleCanvasManager.Inst.CurActTarget.Interact();

@@ -21,16 +21,29 @@ public class TalkUI : PopupBase
 
     protected override void OnActive()
     {
-        if (GameManager.Inst.CurPlayer != null)
-        {
-            GameManager.Inst.CurPlayer.ControllSwitch(false);
-        }
+        isOn = true;
+
+        StartCoroutine("OFF");
+
+        Debug.Log("컨트롤 오프");
     }
     protected override void OnDeactive()
     {
-        if (GameManager.Inst.CurPlayer != null)
+        isOn = false;
+
+        StopCoroutine("OFF");
+        GameManager.Inst.CurPlayer.ControllSwitch(true);
+
+        Debug.Log("컨트롤 오프");
+    }
+
+    private IEnumerator OFF()
+    {
+        while (isOn)
         {
-            GameManager.Inst.CurPlayer.ControllSwitch(true);
+            GameManager.Inst.CurPlayer.ControllSwitch(false);
+
+            yield return null;
         }
     }
 
@@ -42,6 +55,9 @@ public class TalkUI : PopupBase
     private int textlIndex;
     [SerializeField]
     private string lastTalk = null;
+
+    private bool isOn = false;
+    public bool IsON => isOn;
     public void SetTextClass(int targetID)
     {
         for (int i = 0; i < projectExcel.Text.Count; i++)
@@ -50,13 +66,12 @@ public class TalkUI : PopupBase
             {
                 textlIndex = i;
                 textClass = projectExcel.Text[i];
+                lastTalk = talkText.text = null;
+
+                SettingStart();
                 break;
             }
         }
-
-        lastTalk = talkText.text = null;
-
-        SettingStart();
     }
 
 
@@ -127,7 +142,7 @@ public class TalkUI : PopupBase
 
     private void Update()
     {
-        if (textClass != null && Input.GetKeyDown(KeyCode.C)) // 텍스트 클래스가 지정되어 있는 상태에서 C를 눌렀을 경우
+        if (textClass != null && Input.GetKeyDown(KeyCode.Space)) // 텍스트 클래스가 지정되어 있는 상태에서 C를 눌렀을 경우
         {
             if (writeComplete) // 텍스트 완성이 되어 있었을 경우
             {

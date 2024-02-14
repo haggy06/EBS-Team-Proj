@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &26471798
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2463039834239093714, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: bgm
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.063381076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7883723
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17241955
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215300409332935505, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685352218105384070, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
+      propertyPath: m_Name
+      value: Scene BGM
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7af9d0924638996428d8050a2ad05b11, type: 3}
 --- !u!1 &978680322
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e42c3d37473f8468dae6878b78e585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimumLatency: 0.6
 --- !u!1 &1119987203
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +265,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.6085905, g: 0.35516787, b: 0.7735849, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

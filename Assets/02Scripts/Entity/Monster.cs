@@ -15,8 +15,29 @@ public class Monster : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
     }
 
-    private void FixedUpdate()
+    public void FollowPlayer(bool b)
     {
-        nav.SetDestination(target.position);
+        StopCoroutine("TargetTracking");
+
+        if (b)
+        {
+            StartCoroutine("TargetTracking");
+        }
+    }
+
+    public void Forgive()
+    {
+        nav.SetDestination(Vector3.zero);
+        GetComponent<Collider>().enabled = false;
+    }
+
+    private IEnumerator TargetTracking()
+    {
+        while (true)
+        {
+            nav.SetDestination(target.position);
+
+            yield return null;
+        }
     }
 }

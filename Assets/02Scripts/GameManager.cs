@@ -200,4 +200,13 @@ public class GameManager : MonoSingleton<GameManager>
 
         //UnityEditor.EditorApplication.isPlaying = false;
     }
+
+    [Space(15), SerializeField]
+    private bool endingRoot = false;
+    public bool EndingRoot => endingRoot;
+
+    public void SetRoot(bool root)
+    {
+        endingRoot = root;
+    }
 }

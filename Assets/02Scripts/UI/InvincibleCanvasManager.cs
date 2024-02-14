@@ -29,8 +29,8 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
     public PopupBase InteractAlert => interactAlert;
 
     [SerializeField]
-    private PopupBase diaryPopup;
-    public PopupBase DiaryPopup => diaryPopup;
+    private DiaryPopup diaryPopup;
+    public DiaryPopup Diary_Popup => diaryPopup;
 
     [SerializeField]
     private PopupBase escPopup;
@@ -55,7 +55,7 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
         #endregion
 
         #region _DiaryPopup Component_
-        diaryPopup = transform.Find("Diary Popup").GetComponent<PopupBase>();
+        diaryPopup = transform.Find("Diary Popup").GetComponent<DiaryPopup>();
         diaryPopup.InitInfo();
 
         diaryPopup.CanvasHide();
@@ -199,7 +199,7 @@ public class InvincibleCanvasManager : MonoSingleton<InvincibleCanvasManager>
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 curBtn.BtnClick();
             }

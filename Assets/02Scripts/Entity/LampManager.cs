@@ -12,7 +12,7 @@ public class LampManager : MonoBehaviour
 
     private void Start()
     {
-        RandomLampON();
+        //RandomLampON();
 
         LampTouch(true);
         LampTouch(false);
@@ -21,7 +21,7 @@ public class LampManager : MonoBehaviour
     [ContextMenu("Lamp Renewal")]
     private void RandomLampON()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 1; i < transform.childCount; i++)
         {
             transform.GetChild(i).GetComponent<StreetLamp>().LightON(Random.Range(0, 2) == 1);
         }

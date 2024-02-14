@@ -48,6 +48,8 @@ public class AudioManager : MonoSingleton<AudioManager>
         InputAudioClip(Sfx.Exhaustion);
 
         bgm = transform.GetChild(0).GetComponent<AudioSource>();
+        bgm.volume = 0f;
+
         sfx = transform.GetChild(1).GetComponent<AudioSource>();
     }
     public void PlayBGM_Instant(bool isPlay)
@@ -66,11 +68,11 @@ public class AudioManager : MonoSingleton<AudioManager>
         if (isPlay)
         {
             bgm.Play();
-            LeanTween.value(bgm.volume, 1f, duration).setOnUpdate((float value) => bgm.volume = value);
+            LeanTween.value(bgm.volume, 1f, duration).setEase(LeanTweenType.linear).setOnUpdate((float value) => bgm.volume = value);
         }
         else
         {
-            LeanTween.value(bgm.volume, 0f, duration).setOnUpdate((float value) => bgm.volume = value).setOnComplete(bgm.Stop);
+            LeanTween.value(bgm.volume, 0f, duration).setEase(LeanTweenType.linear).setOnUpdate((float value) => bgm.volume = value).setOnComplete(bgm.Stop);
         }
     }
     public void ChangeBGM(AudioClip source)

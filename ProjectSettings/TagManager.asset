@@ -6,6 +6,9 @@ TagManager:
   tags:
   - LookingPos
   - SafeZone
+  - Effects
+  - SceneMove
+  - Monster
   layers:
   - Default
   - TransparentFX

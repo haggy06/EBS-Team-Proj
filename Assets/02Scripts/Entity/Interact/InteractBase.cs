@@ -26,9 +26,9 @@ public class InteractBase : MonoBehaviour
     }
     */
     [SerializeField]
-    private string message = "Press C To Interact";
+    protected string message = "Press C To Interact";
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LookingPos"))
         {
@@ -36,7 +36,7 @@ public class InteractBase : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("LookingPos"))
         {
