@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4803307452037987665}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObj: {fileID: 0}
+  col: {fileID: 0}
 --- !u!136 &5329549620733891360
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -105,7 +106,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.6289307, g: 0.5277585, b: 0.18788804, a: 1}
-  m_Intensity: 7.96
+  m_Intensity: 5
   m_Range: 8.5
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
